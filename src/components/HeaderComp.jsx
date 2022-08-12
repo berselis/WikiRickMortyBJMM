@@ -9,11 +9,8 @@ const HeaderComp = () => {
       <div className='container-fluid'>
         <a className='navbar-brand' href='#'>
           <img alt='BDevelopment' src={logoBDev}/>
-          <span>BJMM</span>
-          <span><h2><strong>Rick and Morty - WiKi</strong></h2></span>
-
-
-
+          <strong>BJMM</strong>
+          <h1>Rick and Morty - WiKi</h1>
         </a>
 
       </div>

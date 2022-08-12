@@ -1,5 +1,8 @@
 import './assets/css/App.css';
 import HeaderComp from './components/HeaderComp';
+import WikiBanner from './components/WikiBanner';
+import WikiFinder from './components/WikiFinder';
+
 
 
 
@@ -8,9 +11,11 @@ function App() {
     <div className='body-content container-fluid'>
       <header>
         <HeaderComp />
-
+        <WikiBanner />
       </header>
-      <main></main>
+      <main>
+        <WikiFinder/>
+      </main>
       <footer></footer>
     </div>
   )

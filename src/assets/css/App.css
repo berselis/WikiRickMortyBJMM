@@ -1,9 +1,10 @@
 * {
   user-select: none;
   box-sizing: border-box;
-  color:#ffffff;
+  color: #ffffff;
 }
-html{
+
+html {
   scroll-behavior: smooth;
 }
 
@@ -11,22 +12,98 @@ html{
   margin: 0;
   padding: 0;
   background: linear-gradient(#242424, #242424);
- 
+
 }
 
-.body-content{
+.body-content {
   min-height: 100vh;
   font-family: Comic Sans MS;
 
 }
 
-.navbar-brand{
+.navbar-brand {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 25px;
 }
 
-.navbar-brand > img{
-  width: 96px;;
+.navbar-brand>img {
+  width: 96px;
+  ;
+}
+
+.navbar-brand>h1 {
+  font-size: calc(2rem + 1.5vw);
+  font-weight: bolder;
+  background: url(/src/assets/img/bgtext.png);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wiki-banner {
+  background-image: url(/src/assets/img/wikibanner.png);
+  min-height: 30vh;
+  background-size: cover;
+  background-position: bottom;
+}
+
+
+.wiki-finder-main {
+  transform: translateY(-8vh);
+}
+
+
+.btn-finder {
+  width: 25%;
+}
+
+.wiki-data-location {
+  margin-top: 3rem !important;
+}
+
+.wiki-data-location>.container {
+  background: #1987548c;
+  border-radius: 15px;
+  padding:10px;
+}
+
+
+.wiki-card-content{
+  margin-top:2rem;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.wiki-card-content > .card{
+  width: 300px;
+  background-color: #1987548c;
+  position: relative;
+}
+
+.wiki-status{
+  position: absolute;
+  width: 35%;
+  background: linear-gradient(#242424, #242424);
+  height: 40px;
+  left: -5px;
+  top:35px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-end;
+ padding-right: 5px;;
+  gap:5px
+}
+
+.wiki-status > img{
+  width: 32px;
 }
