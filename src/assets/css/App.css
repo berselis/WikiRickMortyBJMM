@@ -1,0 +1,32 @@
+* {
+  user-select: none;
+  box-sizing: border-box;
+  color:#ffffff;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(#242424, #242424);
+ 
+}
+
+.body-content{
+  min-height: 100vh;
+  font-family: Comic Sans MS;
+
+}
+
+.navbar-brand{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.navbar-brand > img{
+  width: 96px;;
+}
