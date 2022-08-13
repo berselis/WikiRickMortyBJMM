@@ -11,3 +11,4 @@ const icons = {
     'Alive': '/src/assets/img/alive.png',
     'NA': '/src/assets/img/nan.png',
 }
+

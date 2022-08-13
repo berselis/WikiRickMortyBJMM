@@ -4,8 +4,6 @@ import WikiBanner from './components/WikiBanner';
 import WikiFinder from './components/WikiFinder';
 
 
-
-
 function App() {
   return (
     <div className='body-content container-fluid'>
