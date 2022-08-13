@@ -1,5 +1,8 @@
 import dead from '../../assets/img/dead.png';
 import alive from '../../assets/img/alive.png';
+import unknown from '../../assets/img/nan.png';
+import uknow from '../../assets/img/uknow.png';
+import Unknown from '../../assets/img/unknown.png';
 
 
 export const getIcon = (typeStatus) => {
@@ -9,7 +12,7 @@ export const getIcon = (typeStatus) => {
 const icons = {
     'Dead': dead,
     'Alive': alive,
-    'unknown': '/src/assets/img/nan.png',
-    'uknow': '/src/assets/img/uknow.png',
-    'Unknown': '/src/assets/img/unknown.png'
+    'unknown': unknown,
+    'uknow': uknow,
+    'Unknown': Unknown
 }
