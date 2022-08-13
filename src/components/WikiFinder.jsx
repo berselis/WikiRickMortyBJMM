@@ -94,8 +94,23 @@ const WikiFinder = () => {
 
                 <div className='col-md-12 col-sm-12 col-xs-12 wiki-data-footer'>
                     <div className='container text-center'>
-                        
-                        
+                        <div className='wrapper'>
+                            <a className='btn btn-previous'>
+                                <i className="bi bi-arrow-left-circle-fill"></i>
+                            </a>
+                            <ul className='list-pagination'>
+                                <li className="numb"><span>1</span></li>
+                                <li className="numb active "><span>2</span></li>
+                                <li className="numb"><span>3</span></li>
+                                <li className="numb"><span>4</span></li>
+                            </ul>
+                            <a className='btn btn-next'>
+                                <i className="bi bi-arrow-right-circle-fill"></i>
+                            </a>
+
+                        </div>
+
+
                     </div>
                 </div>
 

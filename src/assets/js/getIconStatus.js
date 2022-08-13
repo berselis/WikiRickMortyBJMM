@@ -1,11 +1,14 @@
+import dead from '../../assets/img/dead.png';
+import alive from '../../assets/img/alive.png';
+
 
 export const getIcon = (typeStatus) => {
     return icons[typeStatus];
 
 }
 const icons = {
-    'Dead': '/src/assets/img/dead.png',
-    'Alive': '/src/assets/img/alive.png',
+    'Dead': dead,
+    'Alive': alive,
     'unknown': '/src/assets/img/nan.png',
     'uknow': '/src/assets/img/uknow.png',
     'Unknown': '/src/assets/img/unknown.png'

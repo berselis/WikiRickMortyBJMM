@@ -72,9 +72,9 @@ html {
   padding: 10px;
 }
 
-.wiki-data-footer > .container{
+.wiki-data-footer>.container {
   background: #1987548c;
-  
+
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   padding: 10px;
@@ -155,8 +155,65 @@ html {
 
 }
 
+.container>.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
 
+.wrapper>ul {
+  display: flex;
+  padding: 8px;
+}
+
+.wrapper>ul>li {
+  list-style-type: none;
+  line-height: 30px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.wrapper > .btn {
+  display: flex;
+  align-items: center;
+
+}
+
+.wrapper > .btn > i {
+  font-size: 42px;
+
+}
 
 
+.wrapper>ul>.numb {
+  background-color: #4c16118c;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 50px;
+  transition: all .3s ease;
+}
 
+.wrapper>ul>.numb:hover:not(.active) {
+  background-color: #113a4c8c;
+  transition: all .3s ease;
+}
+
+.wrapper>ul>.active,
+.wrapper>ul>.active>span {
+  
+  color: #000000;
+}
+
+.wrapper>ul>.active {
+  background: #ffffff;
+  box-shadow: 0 0 20px;
+}
+
+.list-pagination{
+  max-width: 490px;
+  overflow: hidden;
+  margin: 1rem;
+}
