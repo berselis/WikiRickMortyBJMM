@@ -60,13 +60,23 @@ html {
   width: 25%;
 }
 
-.wiki-data-location {
+.wiki-data-location,
+.wiki-data-footer {
   margin-top: 3rem !important;
 }
 
 .wiki-data-location>.container {
   background: #1987548c;
-  border-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 10px;
+}
+
+.wiki-data-footer > .container{
+  background: #1987548c;
+  
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   padding: 10px;
 }
 
@@ -88,13 +98,13 @@ html {
   transition: all .5s ease;
 }
 
-.col-show-data{
+.col-show-data {
   transition: all .5s ease;
 
 }
 
-.col-show-data:hover{
-  background:#114c318c;
+.col-show-data:hover {
+  background: #114c318c;
   transform: translateY(-5px);
   transition: all .5s ease;
   border-radius: 15px;
@@ -112,7 +122,7 @@ html {
   width: 35%;
   background: linear-gradient(#242424, #242424);
   height: 40px;
-  left: -5px;
+  left: -7px;
   top: 35px;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
@@ -121,10 +131,32 @@ html {
   align-content: center;
   justify-content: flex-end;
   padding-right: 5px;
-  ;
-  gap: 5px
+  gap: 5px;
+  z-index: 2;
 }
 
 .wiki-status>img {
   width: 32px;
+
 }
+
+.img-resident {
+  overflow: hidden;
+  z-index: 1;
+}
+
+.img-resident>.card-img-top {
+  width: 100%;
+  transition: all .2s ease
+}
+
+.card:hover>.img-resident>.card-img-top {
+  transform: scale(1.02);
+
+}
+
+
+
+
+
+

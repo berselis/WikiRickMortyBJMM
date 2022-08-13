@@ -1,23 +1,54 @@
-import React from 'react'
+import React from 'react';
+import useGetResidentAxios from '../../assets/hooks/useGetResidentAxios';
+import { getIcon } from '../../assets/js/getIconStatus';
 
-const WikiCard = ({icon}) => {
+const resident = {
+    name: '-',
+    gender: '-',
+    status: '-',
+    iconStatus: getIcon('Uknow'),
+    image: getIcon('Unknown'),
+    species: '-',
+    type: '-',
+
+
+}
+const WikiCard = ({ URI }) => {
+    const queryResident = useGetResidentAxios(URI);
+
+    if (queryResident) {
+        resident.name = queryResident.name || '-';
+        resident.gender = queryResident.gender || '-';
+        resident.status = queryResident.status || '-';
+        resident.iconStatus = getIcon(queryResident.status);
+        resident.image = queryResident.image || getIcon('Unknown');
+        resident.species = queryResident.species || '-';
+        resident.type = queryResident.type || '-';
+
+    }
     return (
         <div className="card">
             <div className='wiki-status'>
-                <strong>Dead</strong>
-                <img src={icon} />
+                <strong>{resident.status}</strong>
+                <img src={resident.iconStatus} />
             </div>
-            <img src="https://rickandmortyapi.com/api/character/avatar/69.jpeg" className="card-img-top" />
+            <div className='img-resident'>
+                <img src={resident.image} className="card-img-top" />
+            </div>
+
             <div className="card-body">
-                <h5 className="card-title"><strong> Commander Rick</strong></h5>
+                <h5 className="card-title"><strong> {resident.name}</strong></h5>
                 <hr />
             </div>
             <div className="card-body">
-                <small>Last known location:</small>
-                <h5>Citadel of Ricks</h5>
+                <small>Gender</small>
+                <h5>{resident.gender}</h5>
 
-                <small>First seen in:</small>
-                <h5>The Rickshank Rickdemption</h5>
+                <small>Type</small>
+                <h5>{resident.type}</h5>
+
+                <small>Species</small>
+                <h5>{resident.species}</h5>
             </div>
         </div>
     )
