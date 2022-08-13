@@ -3,6 +3,8 @@ import WikiInfo from './subcompwikifind/WikiInfo';
 import axios from 'axios';
 import useGetAllLocationAxios from '../assets/hooks/useGetAllLocationAxios';
 import { useState, useEffect } from 'react';
+import { setElemtPagination } from '../assets/js/setPagination';
+
 
 
 
@@ -31,12 +33,8 @@ const WikiFinder = () => {
             if (locationObj) {
                 setUrlLocation(`https://rickandmortyapi.com/api/location/${locationObj.id}`);
                 input.value = null;
-
             }
         }
-
-
-
     }
 
     useEffect(() => {
@@ -52,7 +50,12 @@ const WikiFinder = () => {
         singleLocation.type = queryLocation.type || '-';
         singleLocation.dimension = queryLocation.dimension || '-';
         singleLocation.population = queryLocation.residents.length;
-        if (queryLocation.residents.length > 0) singleLocation.residents = queryLocation.residents
+        if (queryLocation.residents.length > 0) {
+            singleLocation.residents = queryLocation.residents;
+            setElemtPagination(15, 2);
+
+        }
+
     }
 
 
