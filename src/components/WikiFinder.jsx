@@ -1,11 +1,15 @@
 import WikiCard from './subcompwikifind/WikiCard';
 import WikiInfo from './subcompwikifind/WikiInfo';
+import WikiCardNull from './subcompwikifind/WikiCardNull';
+import WikiForm from './subcompwikifind/WikiForm';
+import WikiPaginations from './subcompwikifind/WikiPaginations';
+import WikiFooter from './subcompwikifind/WikiFooter';
+
 import axios from 'axios';
 import useGetAllLocationAxios from '../assets/hooks/useGetAllLocationAxios';
 import { useState, useEffect } from 'react';
 
-import WikiCardNull from './subcompwikifind/WikiCardNull';
-import WikiForm from './subcompwikifind/WikiForm';
+
 
 const ramdomLocationID = Math.floor(Math.random() * 126);
 
@@ -24,6 +28,11 @@ const WikiFinder = () => {
     suggestions = useGetAllLocationAxios();
     const [queryLocation, setQueryLocation] = useState();
     const [urlLocation, setUrlLocation] = useState(`https://rickandmortyapi.com/api/location/${ramdomLocationID}`);
+    const [residentCards, setResidentCards] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [cardPerPage] = useState(3);
+    
+    
     const findLocation = (e) => {
         e.preventDefault();
 
@@ -36,11 +45,8 @@ const WikiFinder = () => {
             }
         }
     }
-    
 
-    const [residentCards, setResidentCards] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [cardPerPage, setCardPerPage] = useState(3);
+    
 
     useEffect(() => {
         axios.get(urlLocation)
@@ -60,43 +66,31 @@ const WikiFinder = () => {
         if (queryLocation.residents.length > 0) {
             singleLocation.residents = queryLocation.residents;
         }
-        
-    }
 
+    }
 
     //Get current residentCard
     const indexOfLastCard = currentPage * cardPerPage;
     const indexOfFirstCard = indexOfLastCard - cardPerPage;
     const currentResidentCards = residentCards.slice(indexOfFirstCard, indexOfLastCard);
 
+    //Change page
+    const paginate = (e) =>{
+        [...e.target.parentElement.childNodes].forEach(li => {
+            li.className = 'numb';
+        });
+        e.target.className = 'numb active';
+        setCurrentPage(parseInt(e.target.innerText));
+    }
 
-    
     return (
         <div className='container wiki-finder-main'>
             <div className='row'>
-                <div className='col-md-12 col-sm-12 col-xs-12'>
-                   <WikiForm findLocation={findLocation} suggestions={suggestions}/>
-                </div>
+                <WikiForm findLocation={findLocation} suggestions={suggestions} />
 
                 <WikiInfo dataInfo={singleLocation} />
-                <div className='col-md-12 col-sm-12 col-xs-12 wiki-data-pagination'>
-                    <div className='container text-center'>
 
-                        <ul className='list-paginations'>
-
-                            <li className='numb'>1</li>
-                            <li className='numb'>2</li>
-                            <li className='numb active'>3</li>
-                            <li className='numb'>4</li>
-                            <li className='numb'>5</li>
-
-                        </ul>
-
-
-
-                    </div>
-
-                </div>
+                <WikiPaginations cardPerPage={cardPerPage} totalCards={residentCards.length} paginate={paginate} />
 
                 <div className='col-md-12 col-sm-12 col-xs-12'>
                     <div className='wiki-card-content'>
@@ -107,9 +101,7 @@ const WikiFinder = () => {
                 </div>
 
 
-                <div className='col-md-12 col-sm-12 col-xs-12 wiki-data-footer'>
-                    <div className='container text-center'></div>
-                </div>
+                <WikiFooter />
             </div>
         </div>
 
