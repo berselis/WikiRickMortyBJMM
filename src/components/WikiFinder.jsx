@@ -26,6 +26,7 @@ const WikiFinder = () => {
     const [residentCards, setResidentCards] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [cardPerPage] = useState(4);
+    const [loctionName, setLocationName] = useState();
 
     const findLocation = (e) => {
         e.preventDefault();
@@ -35,6 +36,8 @@ const WikiFinder = () => {
             const locationObj = suggestions.find(fi => fi.name == input.value)
             if (locationObj) {
                 setUrlLocation(`https://rickandmortyapi.com/api/location/${locationObj.id}`);
+                setLocationName(input.value);
+                setCurrentPage(1);
                 input.value = null;
             }
         }
@@ -83,7 +86,7 @@ const WikiFinder = () => {
 
                 <WikiInfo dataInfo={singleLocation} />
 
-                <WikiPaginations cardPerPage={cardPerPage} totalCards={residentCards.length} paginate={paginate} />
+                <WikiPaginations cardPerPage={cardPerPage} totalCards={residentCards.length} paginate={paginate} locationName={loctionName} />
 
                 <div className='col-md-12 col-sm-12 col-xs-12'>
                     <div className='wiki-card-content'>
