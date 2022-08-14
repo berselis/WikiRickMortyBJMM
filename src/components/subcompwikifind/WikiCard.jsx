@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import useGetResidentAxios from '../../assets/hooks/useGetResidentAxios';
 import { getIcon } from '../../assets/js/getIconStatus';
 
@@ -16,6 +17,7 @@ const WikiCard = ({ URI }) => {
     
     }
     const queryResident = useGetResidentAxios(URI);
+    let fadeIn = '';
 
     if (queryResident) {
         resident.name = queryResident.name || '-';
@@ -25,10 +27,10 @@ const WikiCard = ({ URI }) => {
         resident.image = queryResident.image || getIcon('Unknown');
         resident.species = queryResident.species || '-';
         resident.type = queryResident.type || '-';
-
+        fadeIn = 'card-in'
     }
     return (
-        <div className="card">
+        <div className={`card ${fadeIn}`}>
             <div className='wiki-status'>
                 <strong>{resident.status}</strong>
                 <img src={resident.iconStatus} />
