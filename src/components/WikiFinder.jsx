@@ -25,7 +25,7 @@ const WikiFinder = () => {
     const [urlLocation, setUrlLocation] = useState(`https://rickandmortyapi.com/api/location/${ramdomLocationID}`);
     const [residentCards, setResidentCards] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [cardPerPage] = useState(3);
+    const [cardPerPage] = useState(4);
 
     const findLocation = (e) => {
         e.preventDefault();
