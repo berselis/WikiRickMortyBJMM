@@ -94,6 +94,7 @@ html {
 
 .wiki-card-content>.card {
   width: 290px;
+  height: 620px;
   background-color: #1987548c;
   position: relative;
   transition: all .5s ease;
