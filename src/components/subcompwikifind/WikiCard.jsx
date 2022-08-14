@@ -2,18 +2,19 @@ import React from 'react';
 import useGetResidentAxios from '../../assets/hooks/useGetResidentAxios';
 import { getIcon } from '../../assets/js/getIconStatus';
 
-const resident = {
-    name: '-',
-    gender: '-',
-    status: '-',
-    iconStatus: getIcon('Uknow'),
-    image: getIcon('Unknown'),
-    species: '-',
-    type: '-',
 
-
-}
 const WikiCard = ({ URI }) => {
+    const resident = {
+        name: '-',
+        gender: '-',
+        status: '-',
+        iconStatus: getIcon('Uknow'),
+        image: getIcon('Unknown'),
+        species: '-',
+        type: '-',
+    
+    
+    }
     const queryResident = useGetResidentAxios(URI);
 
     if (queryResident) {

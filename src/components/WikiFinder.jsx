@@ -9,29 +9,24 @@ import axios from 'axios';
 import useGetAllLocationAxios from '../assets/hooks/useGetAllLocationAxios';
 import { useState, useEffect } from 'react';
 
-
-
-const ramdomLocationID = Math.floor(Math.random() * 126);
-
-
-let suggestions = []
-
-let singleLocation = {
-    name: '-',
-    type: '-',
-    dimension: '-',
-    population: '-',
-    residents: []
-}
-
 const WikiFinder = () => {
+    const ramdomLocationID = Math.floor(Math.random() * 126);
+    let suggestions = []
+
+    let singleLocation = {
+        name: '-',
+        type: '-',
+        dimension: '-',
+        population: '-',
+        residents: []
+    }
     suggestions = useGetAllLocationAxios();
     const [queryLocation, setQueryLocation] = useState();
     const [urlLocation, setUrlLocation] = useState(`https://rickandmortyapi.com/api/location/${ramdomLocationID}`);
     const [residentCards, setResidentCards] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [cardPerPage] = useState(3);
-    
+
     const findLocation = (e) => {
         e.preventDefault();
 
@@ -72,7 +67,7 @@ const WikiFinder = () => {
     const currentResidentCards = residentCards.slice(indexOfFirstCard, indexOfLastCard);
 
     //Change page
-    const paginate = (e) =>{
+    const paginate = (e) => {
         [...e.target.parentElement.childNodes].forEach(li => {
             li.className = 'numb';
         });
@@ -80,7 +75,7 @@ const WikiFinder = () => {
         setCurrentPage(parseInt(e.target.innerText));
     }
 
-  
+
     return (
         <div className='container wiki-finder-main'>
             <div className='row'>
@@ -97,7 +92,6 @@ const WikiFinder = () => {
                         }
                     </div>
                 </div>
-
 
                 <WikiFooter />
             </div>

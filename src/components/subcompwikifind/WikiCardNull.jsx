@@ -1,18 +1,19 @@
 import React from 'react';
 import { getIcon } from '../../assets/js/getIconStatus';
 
-const resident = {
-    name: '-',
-    gender: '-',
-    status: '-',
-    iconStatus: getIcon('Uknow'),
-    image: getIcon('Unknown'),
-    species: '-',
-    type: '-',
 
-
-}
 const WikiCardNull = () => {
+    const resident = {
+        name: '-',
+        gender: '-',
+        status: '-',
+        iconStatus: getIcon('Uknow'),
+        image: getIcon('Unknown'),
+        species: '-',
+        type: '-',
+    
+    
+    }
     return (
         <div className="card">
             <div className='wiki-status'>
