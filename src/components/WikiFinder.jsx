@@ -32,7 +32,6 @@ const WikiFinder = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [cardPerPage] = useState(3);
     
-    
     const findLocation = (e) => {
         e.preventDefault();
 
@@ -45,8 +44,6 @@ const WikiFinder = () => {
             }
         }
     }
-
-    
 
     useEffect(() => {
         axios.get(urlLocation)
@@ -83,6 +80,7 @@ const WikiFinder = () => {
         setCurrentPage(parseInt(e.target.innerText));
     }
 
+  
     return (
         <div className='container wiki-finder-main'>
             <div className='row'>
