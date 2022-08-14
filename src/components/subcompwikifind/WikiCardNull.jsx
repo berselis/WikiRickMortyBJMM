@@ -15,7 +15,7 @@ const WikiCardNull = () => {
     
     }
     return (
-        <div className="card">
+        <div className="card card-in">
             <div className='wiki-status'>
                 <strong>{resident.status}</strong>
                 <img src={resident.iconStatus} />

@@ -13,8 +13,6 @@ const WikiCard = ({ URI }) => {
         image: getIcon('Unknown'),
         species: '-',
         type: '-',
-    
-    
     }
     const queryResident = useGetResidentAxios(URI);
     let fadeIn = '';
